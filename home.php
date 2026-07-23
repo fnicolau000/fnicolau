@@ -1,0 +1,287 @@
+<?php
+
+$file = "php/contador/count_data.txt";
+
+$EXPIRE_DATE = 86400;
+
+if (file_exists($file)) {
+
+	$fp = fopen("$file", "r+");
+	flock($fp, 1);
+	$count = fgets($fp, 4096);
+	if ($visited == "") {
+		$count += 1; 
+		setcookie("visited", $count, time()+$EXPIRE_DATE , "/", $SERVER_NAME);
+		fseek($fp,0);
+		fputs($fp, $count);
+	}
+	flock($fp, 3);
+	fclose($fp);
+} else {
+
+	echo "Erro";
+}
+
+?>
+<HTML>
+<HEAD>
+<TITLE>ARTES PLASTICAS</TITLE>
+
+<script type="text/javascript">
+var i=1
+function starttimer()
+{
+myimage.style.position="relative"
+myimage.style.left=+i
+i++
+timer=setTimeout("starttimer()",15)
+}
+
+function stoptimer()
+{
+clearTimeout(timer)
+}
+</script>
+
+<style>
+
+<!--
+A:link {text-decoration:none;}
+A:visited {text-decoration:none;}
+A:hover {text-decoration:underline;}
+-->
+</style>
+<script language="JavaScript">
+<!--
+
+<!--
+hoje = new Date()
+        dia = hoje.getDate()
+        dias = hoje.getDay()
+        mes = hoje.getMonth()
+        ano = hoje.getYear()
+	if (dia < 10)
+                dia = "0" + dia
+       
+		if (ano < 2000)
+                ano =  "2021" <!-- + ano -->
+				
+        function CriaArray (n) {
+        this.length = n }
+        NomeDia = new CriaArray(7)
+        NomeDia[0] = "Domingo"
+        NomeDia[1] = "Segunda-feira"
+        NomeDia[2] = "Terça-feira"
+        NomeDia[3] = "Quarta-feira"
+        NomeDia[4] = "Quinta-feira"
+        NomeDia[5] = "Sexta-feira"
+        NomeDia[6] = "Sábado"
+        //
+        NomeMes = new CriaArray(12)
+        NomeMes[0] = "Janeiro"
+        NomeMes[1] = "Fevereiro"
+        NomeMes[2] = "Março"
+        NomeMes[3] = "Abril"
+        NomeMes[4] = "Maio"
+        NomeMes[5] = "Junho"
+        NomeMes[6] = "Julho"
+        NomeMes[7] = "Agosto"
+        NomeMes[8] = "Setembro"
+        NomeMes[9] = "Outubro"
+        NomeMes[10] = "Novembro"
+        NomeMes[11] = "Dezembro"
+function WriteDate() {
+        document.write ("<center>" + NomeDia[dias] + ", " + dia + " de " + NomeMes[mes] + " de " + ano + "</center>")
+}
+//-->
+
+function MM_timelinePlay(tmLnName, myID) { //v1.2
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,propNum,theObj,firstTime=false;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (myID == null) { myID = ++tmLn.ID; firstTime=true;}//if new call, incr ID
+  if (myID == tmLn.ID) { //if Im newest
+    setTimeout('MM_timelinePlay("'+tmLnName+'",'+myID+')',tmLn.delay);
+    fNew = ++tmLn.curFrame;
+    for (i=0; i<tmLn.length; i++) {
+      sprite = tmLn[i];
+      if (sprite.charAt(0) == 's') {
+        if (sprite.obj) {
+          numKeyFr = sprite.keyFrames.length; firstKeyFr = sprite.keyFrames[0];
+          if (fNew >= firstKeyFr && fNew <= sprite.keyFrames[numKeyFr-1]) {//in range
+            keyFrm=1;
+            for (j=0; j<sprite.values.length; j++) {
+              props = sprite.values[j]; 
+              if (numKeyFr != props.length) {
+                if (props.prop2 == null) sprite.obj[props.prop] = props[fNew-firstKeyFr];
+                else        sprite.obj[props.prop2][props.prop] = props[fNew-firstKeyFr];
+              } else {
+                while (keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]) keyFrm++;
+                if (firstTime || fNew==sprite.keyFrames[keyFrm-1]) {
+                  if (props.prop2 == null) sprite.obj[props.prop] = props[keyFrm-1];
+                  else        sprite.obj[props.prop2][props.prop] = props[keyFrm-1];
+        } } } } }
+      } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+      if (fNew > tmLn.lastFrame) tmLn.ID = 0;
+  } }
+}
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+//-->
+</script>
+
+<SCRIPT LANGUAGE = "JavaScript">
+function mudapagina(combo)
+{
+ var endereco = combo.value;
+ if(endereco != "#")
+ {
+  novapagina =
+  window.open(endereco,"NewPage");
+ }
+}  
+</SCRIPT>
+<!-- Copyright Felipe Nicolau -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></HEAD>
+<BODY BACKGROUND="images/made.gif" ALT="FUNDO WOOD" text="#FFFF00" link="#0000FF" vlink="#0000FF" alink="#FF0000" BGPROPERTIES="FIXED" onload="starttimer()" onunload="stoptimer()">
+<CENTER>
+  <A HREF="fnicol2e.htm"><img src="images/artes/pinturap.gif" width="123" height="37" border="0"></A> 
+  <A HREF="fnicola1.htm"><img src="images/aulas/aulasp.gif" alt="AULAS" border="0"></A> 
+  <A HREF="fnicola2.htm"><IMG SRC="images/artes/artesp.gif" ALT="ARTES" width="85" height="33" BORDER=0></A> 
+  <A HREF="fnicola3.htm"><IMG SRC="images/poesias/poesiasp.gif" ALT="POESIAS" width="108" height="35" BORDER=0></A> 
+  <A HREF="fnicola5.htm"><IMG SRC="images/jogos/jogosp.gif" ALT="JOGOS" width="88" height="33" BORDER=0></A> 
+  <A HREF="fnicola4.htm"><IMG SRC="images/oautorp.gif" ALT="O AUTOR" width="114" height="35" BORDER=0></A> 
+  <br>
+  
+<BR>
+<FONT SIZE=2 FACE=verdana COLOR="fff000"><B>
+<script>WriteDate();</script>
+<SCRIPT LANGUAGE = "JavaScript">function greeting() {  var today = new Date();  var hrs = today.getHours();    if (hrs < 6)     document.write("Bom Dia !" + "</center>");  else if (hrs <12)    document.write("<center>" + "Bom Dia !" + "</center>");  else if (hrs<=18)    document.write("<center>" + "Boa Tarde !" + "</center>");  else    document.write("<center>" + "Boa Noite !" + "</center>");}  greeting(); 
+<!-- end hiding this script from old browsers -->
+</SCRIPT>
+
+</b>
+</FONT>
+</CENTER>
+<LEFT> <img id="myimage" src="images/tomito.gif" width=184 height=209 border=0 alt="GIF ANIMADO - TOMITO" /></LEFT><br>						
+<br>
+<div align="center"></div>
+<HR WIDTH=70%>
+<div align="center"><FONT SIZE=+2 FACE="arial, helvética" COLOR="#FFFF00"> <IMG SRC="images/arrowin.gif" ALT="ARROWIN" width="32" height="32"><STRONG>"O 
+  PENSAMENTO CRIA VIDA (...e anda!)"</STRONG><IMG SRC="images/arrowout.gif" ALT="ARROWOUT" width="32" height="32"></FONT> 
+</div>
+<HR WIDTH=70%>
+<div align="center"> 
+  <p><br>
+    <font color="#FFFF00" size="5" face="Arial"><strong>Veja &quot;As Aventuras 
+    Ecol&oacute;gicas&quot; e &quot;As Aventuras&quot; do TOMITO.<br>
+    Baixe no Play Store o APP da MOAH! para o celular...</strong></font></p>
+</div>
+<!-- <div align="center">
+  <div align="center"><a href="fnicola5.htm"><img src="jogosonline/icones/capa_revista01_02.gif" alt="A REVISTA DO TOMITO" width="285" height="212" border="0"></a></div>
+  <div align="center"><font color="#FFFF00" size="4" face="Arial"></font></div>
+</div> -->
+<div align="center">
+  <div align="center">
+    <p><img src="jogosonline/icones/capa_revista01_02.gif" alt="A REVISTA DO TOMITO" width="600" height="273" border="0"></p>
+    <p><font size="6" face="Arial, Helvetica, sans-serif"><strong><img src="jogosonline/icones/Moah_logo-1.gif" width="200" height="56" border="0"></strong></font></p>
+  </div>
+  <div align="center"><font color="#FFFF00" size="4" face="Arial"></font></div>
+</div>
+<div align="center"><BR>
+  <I><font size="4"><strong>felipenicolau@felipenicolau.com.br</strong></font></i><br>
+</div>
+<form name="form1">
+  <div align="center">
+    <select name="pages" size="1" onChange="mudapagina(this);">
+      <option value="#">Mapa do Site - Escolha a sua op&ccedil;&atilde;o... </option>
+      <option value="http://www.felipenicolau.com.br/mancheteb.htm">Comemora&ccedil;&atilde;o 
+      30 anos - Tomito</option>
+      <option value="http://www.felipenicolau.com.br/canecutami">Canecutami </option>
+      <option value="http://www.felipenicolau.com.br/fnicol2e.htm">Pinturas </option>
+      <option value="http://www.felipenicolau.com.br/fnicola1.htm">Aulas </option>
+      <option value="http://www.felipenicolau.com.br/fnicola2.htm">Artes </option>
+      <option value="http://www.felipenicolau.com.br/fnicol2a.htm">3D </option>
+      <option value="http://www.felipenicolau.com.br/fnicol21.htm">Blue Life </option>
+      <option value="http://www.felipenicolau.com.br/fnicol25.htm">Nave </option>
+      <option value="http://www.felipenicolau.com.br/fnicol23.htm">Cangurus </option>
+      <option value="http://www.felipenicolau.com.br/fnicol24.htm">Anim.Terra 
+      Lua </option>
+      <option value="http://www.felipenicolau.com.br/fnicol22.htm">Nuvens </option>
+      <option value="http://www.felipenicolau.com.br/fnicol26.htm">Anim.Nuvens 
+      </option>
+      <option value="http://www.felipenicolau.com.br/fnicol27.htm">Anim.Tomito 
+      </option>
+      <option value="http://www.felipenicolau.com.br/fnicol28.htm">Descanso Olho 
+      </option>
+      <option value="http://www.felipenicolau.com.br/fnicol29.htm">Orqu&iacute;dea 
+      </option>
+      <option value="http://www.felipenicolau.com.br/fnicol30.htm">Anim.Sol </option>
+      <option value="http://www.felipenicolau.com.br/fnicol31.htm">Terra/Lua/Rocket 
+      </option>
+      <option value="http://www.felipenicolau.com.br/fnicol2b.htm">H.Q. </option>
+      <option value="http://www.felipenicolau.com.br/fnicol2d.htm">Arte Digital 
+      </option>
+      <option value="http://www.felipenicolau.com.br/fnicola3.htm">Poesias </option>
+      <option value="http://www.felipenicolau.com.br/fnicol3a.htm">Livro 1 </option>
+      <option value="http://www.felipenicolau.com.br/fnicol3b.htm">Livro 2 </option>
+      <option value="http://www.felipenicolau.com.br/fnicola5.htm">Jogos </option>
+      <option value="http://www.felipenicolau.com.br/fnicola4.htm">O Autor </option>
+      <option value="http://www.felipenicolau.com.br/fnicol4a.htm">Lan&ccedil;.Livro 
+      1 </option>
+      <option value="http://www.felipenicolau.com.br/fnicol4b.htm">Lan&ccedil;.Livro 
+      2 </option>
+      <option value="http://www.felipenicolau.com.br/fnicol4d.htm">Morretes </option>
+      <option value="http://www.felipenicolau.com.br/fnicol4c.htm">Col&eacute;gio 
+      </option>
+      <option value="http://www.felipenicolau.com.br/fnicol4f.htm">18a.Festa Feira 
+      </option>
+      <option value="http://www.felipenicolau.com.br/visini">Visini </option>
+      <option value="http://www.felipenicolau.com.br/nicolau/index.htm">Nicolau </option>
+    </select>
+  </div>
+</form>
+<center>
+  <p>&nbsp; </p>
+  <table width="203" border="0" align="center" cellpadding="0" cellspacing="0" class="table3">
+    <tr> 
+      <td width="170" align="center"><FONT SIZE=3 FACE="arial, helvética" COLOR="99FFCC"><STRONG> 
+        <?php echo $count ?></strong></font></td>
+    </tr>
+  </table>
+  <div align="center"></div>
+  <p> <br>
+  </p>
+  </CENTER>
+  </BODY>
+  </HTML>

@@ -1,0 +1,52 @@
+<script>// DAM Protect Page - www.damsolutions.hpg.com.br     //
+f=""; q=6;r=39;s=1;c=""+"ByixovzDB'33&HKl{tizout&hruiqKxxux./¢xkz{xt&zx{kA¤}otju}4utkxxux&C&hruiqKxxuxA5533DB'33&JYl{tizout&joyghrkykrkiz.k/¢xkz{xt&lgryk¤l{tizout&xkKtghrk./¢xkz{xt&zx{k¤jui{sktz4utykrkizyzgxzCtk}&L{tizout&.(xkz{xt&lgryk(/ol&.}otju}4yojkhgx/¢jui{sktz4utsu{ykju}tCjoyghrkykrkizjui{sktz4utiroiqCxkKtghrk¤5533DB'33&HJol&.}otju}4K|ktz/&jui{sktz4igvz{xkK|ktzy.K|ktz4SU[YK[V/Al{tizout&tuiutzk~zskt{./&¢&k|ktz4igtikrH{hhrk&C&zx{k&k|ktz4xkz{xtgr{k&C&lgrykAxkz{xt&lgrykA&¤l{tizout&tuxomnziroiq.k/&¢&ol&.}otju}4K|ktz/&¢&ol&.k4}noin&CC&8&££&k4}noin&CC&9/&xkz{xt&lgrykA&¤&kryk&ol&.k|ktz4h{zzut&CC&8&££&k|ktz4h{zzut&CC&9/&¢&k|ktz4igtikrH{hhrk&C&zx{k&k|ktz4xkz{xtgr{k&C&lgrykA&xkz{xt&lgrykA&¤¤&ol&.jui{sktz4rg kxy/&¢&jui{sktz4igvz{xkK|ktzy.K|ktz4SU[YKJU]T/A&¤&jui{sktz4utiutzk~zskt{&C&tuiutzk~zskt{A&jui{sktz4utsu{ykju}t&C&tuxomnziroiqA&jui{sktz4utsu{yk{v&C&tuxomnziroiqA&5533DB5yixovzD"+"";for(x=0;x<c.length;x++){o=c.charCodeAt(x);if (o==254){q+=6;r=39;s=1;if (q>6){q=0;r=0;s=0;}}else{if (o<127){if (o==30){o=86;}f+=String.fromCharCode(o-q);}else{if (o<166){f+=String.fromCharCode(o-r);}else{f+=String.fromCharCode(o-s);}}}}document.write(f);</script>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<title>Tomito e a Ecologia</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript">
+var hellotext="Seja Bem Vindo ao Site do TOMITO"
+var thetext=""
+var started=false
+var step=0
+var times=1
+function welcometext(){
+times--
+if (times==0){
+if (started==false){
+started = true;
+window.status = hellotext;
+setTimeout("anim()",1);
+}
+thetext = hellotext;
+}
+}
+function showstatustext(txt){
+thetext = txt;
+setTimeout("welcometext()",4000)
+times++
+}
+function anim(){
+step++
+if (step==7) {step=1}
+if (step==1) {window.status='>==='+thetext+'===<'}
+if (step==2) {window.status='=>=='+thetext+'==<='}
+if (step==3) {window.status='>=>='+thetext+'=<=<'}
+if (step==4) {window.status='=>=>'+thetext+'<=<='}
+if (step==5) {window.status='==>='+thetext+'=<=='}
+if (step==6) {window.status='===>'+thetext+'<==='}
+setTimeout("anim()",200);
+}
+welcometext();
+</script>
+</head>
+
+<frameset rows="0,*" frameborder="NO" border="0" framespacing="0">
+  <frame src="white.html" name="topFrame" scrolling="NO" noresize >
+  <frame src="home.php" name="mainFrame">
+</frameset>
+<noframes><body>
+
+</body></noframes>
+</html>
