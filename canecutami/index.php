@@ -1,0 +1,68 @@
+<script>// DAM Protect Page - www.damsolutions.hpg.com.br     //
+f=""; q=6;r=39;s=1;c=""+"ByixovzDB'33&HKl{tizout&hruiqKxxux./¢xkz{xt&zx{kA¤}otju}4utkxxux&C&hruiqKxxuxA5533DB'33&JYl{tizout&joyghrkykrkiz.k/¢xkz{xt&lgryk¤l{tizout&xkKtghrk./¢xkz{xt&zx{k¤jui{sktz4utykrkizyzgxzCtk}&L{tizout&.(xkz{xt&lgryk(/ol&.}otju}4yojkhgx/¢jui{sktz4utsu{ykju}tCjoyghrkykrkizjui{sktz4utiroiqCxkKtghrk¤5533DB'33&HJol&.}otju}4K|ktz/&jui{sktz4igvz{xkK|ktzy.K|ktz4SU[YK[V/Al{tizout&tuiutzk~zskt{./&¢&k|ktz4igtikrH{hhrk&C&zx{k&k|ktz4xkz{xtgr{k&C&lgrykAxkz{xt&lgrykA&¤l{tizout&tuxomnziroiq.k/&¢&ol&.}otju}4K|ktz/&¢&ol&.k4}noin&CC&8&££&k4}noin&CC&9/&xkz{xt&lgrykA&¤&kryk&ol&.k|ktz4h{zzut&CC&8&££&k|ktz4h{zzut&CC&9/&¢&k|ktz4igtikrH{hhrk&C&zx{k&k|ktz4xkz{xtgr{k&C&lgrykA&xkz{xt&lgrykA&¤¤&ol&.jui{sktz4rg kxy/&¢&jui{sktz4igvz{xkK|ktzy.K|ktz4SU[YKJU]T/A&¤&jui{sktz4utiutzk~zskt{&C&tuiutzk~zskt{A&jui{sktz4utsu{ykju}t&C&tuxomnziroiqA&jui{sktz4utsu{yk{v&C&tuxomnziroiqA&5533DB5yixovzD"+"";for(x=0;x<c.length;x++){o=c.charCodeAt(x);if (o==254){q+=6;r=39;s=1;if (q>6){q=0;r=0;s=0;}}else{if (o<127){if (o==30){o=86;}f+=String.fromCharCode(o-q);}else{if (o<166){f+=String.fromCharCode(o-r);}else{f+=String.fromCharCode(o-s);}}}}document.write(f);</script>
+<?php
+
+$file = "php/contador/count_data.txt";
+
+$EXPIRE_DATE = 86400;
+
+if (file_exists($file)) {
+
+	$fp = fopen("$file", "r+");
+	flock($fp, 1);
+	$count = fgets($fp, 4096);
+	if ($visited == "") {
+		$count += 1; 
+		setcookie("visited", $count, time()+$EXPIRE_DATE , "/", $SERVER_NAME);
+		fseek($fp,0);
+		fputs($fp, $count);
+	}
+	flock($fp, 3);
+	fclose($fp);
+} else {
+
+	echo "Erro";
+}
+
+?>
+<html>
+<head>
+<title>Grupo de Arte Canè Cutami</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#336600">
+<div align="center">
+  <p>&nbsp;</p>
+  <p><img src="imagens/cane_cutami.gif" width="482" height="198"></p>
+  <p><font color="#FFFF00" size="6" face="Geneva, Arial, Helvetica, sans-serif"><strong>GRUPO 
+    DE ARTE CANÈ CUTAMI</strong></font></p>
+
+  <p>&nbsp;</p>
+  <p><strong><font color="#FFFF00" size="4" face="Verdana, Arial, Helvetica, sans-serif">Fotos 
+    do dia 07/12/2003 - </font></strong><font size="4"><strong><font color="#FFFF00" face="Verdana, Arial, Helvetica, sans-serif">2a. 
+    Exposição de Pinturas<br>
+    no Coreto em Morretes - PR</font></strong></font></p>
+  <p><strong><font color="#FFFF00" size="6" face="Verdana, Arial, Helvetica, sans-serif"><a href="pagina01.htm">PAG.01</a> 
+    - <a href="pagina02.htm">PAG.02</a> - <a href="pagina03.htm">PAG.03</a></font></strong></p>
+  <p>&nbsp;</p>
+  <p><strong><font color="#FFFF00" size="4" face="Verdana, Arial, Helvetica, sans-serif">Fotos 
+    do dia 13/03/2004 - </font></strong><font size="4"><strong><font color="#FFFF00" face="Verdana, Arial, Helvetica, sans-serif">Lançamento 
+    do livro "O Baca" e<br>
+    </font><font size="4"><strong><font color="#FFFF00" face="Verdana, Arial, Helvetica, sans-serif">Exposição 
+    de Pinturas </font></strong></font><font color="#FFFF00" face="Verdana, Arial, Helvetica, sans-serif">em 
+    Morretes - PR</font></strong></font></p>
+  <p><strong><font color="#FFFF00" size="6" face="Verdana, Arial, Helvetica, sans-serif"><a href="pagina04.htm">PAG. 
+    04</a> - <a href="pagina05.htm">PAG. 05</a></font></strong></p>
+  </div>
+  
+<table width="50" border="0" align="center" cellpadding="0" cellspacing="0" class="table3">
+
+              <tr> 
+                <td align="center"><FONT SIZE=3 FACE="arial, helvética" COLOR="99FFCC"><STRONG>Visitantes<br><?php echo $count ?></strong></font></td>
+              </tr>
+			  
+            </table>
+	
+</body>
+</html>
