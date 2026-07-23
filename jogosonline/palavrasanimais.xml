@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caca-palavra>
+	<config linhas="10" colunas="17" x="60" y="80" espaco="2"/>
+	<palavras>
+		<palavra orientacao="vertical" coluna="1" linha="5">RAPOSA</palavra>
+		<palavra orientacao="horizontal" coluna="2" linha="5">RINOCERONTE</palavra>
+		<palavra orientacao="horizontal_inverso" coluna="8" linha="1">OURICO</palavra>
+
+		<palavra orientacao="diagonal_esquerda" coluna="10" linha="1">URSO</palavra>
+
+		<palavra orientacao="horizontal" coluna="4" linha="7">ELEFANTE</palavra>
+		<palavra orientacao="diagonal_direita" coluna="1" linha="1">LOBO</palavra>
+		<palavra orientacao="vertical" coluna="16" linha="7">LEAO</palavra>
+		<palavra orientacao="horizontal" coluna="4" linha="9">LEOPARDO</palavra>
+		<palavra orientacao="diagonal_direita" coluna="11" linha="2">AGUIA</palavra>
+		<palavra orientacao="vertical_inverso" coluna="16" linha="5">TIGRE</palavra>
+	</palavras>
+</caca-palavra>

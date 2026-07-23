@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caca-palavra>
+	<config linhas="10" colunas="17" x="60" y="80" espaco="2"/>
+	<palavras>
+		<palavra orientacao="vertical" coluna="1" linha="3">AROREIRA</palavra>
+		<palavra orientacao="horizontal" coluna="2" linha="4">LOURO</palavra>
+		<palavra orientacao="diagonal_direita" coluna="3" linha="6">CEDRO</palavra>
+		<palavra orientacao="horizontal_inverso" coluna="6" linha="2">IMBUIA</palavra>
+		<palavra orientacao="horizontal" coluna="6" linha="5">PAU</palavra>
+		<palavra orientacao="horizontal" coluna="5" linha="6">BRASIL</palavra>
+		<palavra orientacao="horizontal" coluna="7" linha="1">PINHEIRO</palavra>
+		<palavra orientacao="horizontal" coluna="10" linha="2">DO</palavra>
+		<palavra orientacao="horizontal" coluna="8" linha="3">PARANA</palavra>
+		<palavra orientacao="horizontal" coluna="9" linha="10">JACARANDA</palavra>
+		<palavra orientacao="vertical" coluna="15" linha="5">MOGNO</palavra>
+		<palavra orientacao="diagonal_esquerda" coluna="17" linha="1">CEREJEIRA</palavra>
+		<palavra orientacao="vertical_inverso" coluna="17" linha="9">CAVIUNA</palavra>
+	</palavras>
+</caca-palavra>

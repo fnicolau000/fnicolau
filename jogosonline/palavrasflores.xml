@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caca-palavra>
+	<config linhas="10" colunas="17" x="60" y="80" espaco="2"/>
+	<palavras>
+		<palavra orientacao="vertical" coluna="1" linha="4">VIOLETA</palavra>
+		<palavra orientacao="horizontal_inverso" coluna="10" linha="2">MARGARIDA</palavra>
+		<palavra orientacao="diagonal_direita" coluna="3" linha="3">ORQUIDEA</palavra>
+		<palavra orientacao="horizontal" coluna="3" linha="10">GERANIO</palavra>
+		<palavra orientacao="diagonal_direita" coluna="9" linha="4">GERBERA</palavra>
+		<palavra orientacao="vertical" coluna="12" linha="1">DALIA</palavra>
+		<palavra orientacao="vertical_inverso" coluna="14" linha="5">LIRIO</palavra>
+		<palavra orientacao="diagonal_esquerda" coluna="17" linha="3">ROSA</palavra>
+		<palavra orientacao="diagonal_direita" coluna="7" linha="4">PAPOULA</palavra>
+		<palavra orientacao="vertical" coluna="17" linha="5">JASMIM</palavra>
+	</palavras>
+</caca-palavra>
