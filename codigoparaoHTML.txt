@@ -1,9 +1,0 @@
-<html>
-<head>
-  <script src="flash.js"></script>
-</head>
-
-<body>
-  <script>ConteudoFlash();</script>
-</body>
-</html>
